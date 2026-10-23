@@ -1,0 +1,21 @@
+name: CI Telemetry
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  telemetry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: stage checkout
+        run: echo "stage=checkout seconds=4"
+      - name: stage build
+        run: echo "stage=build seconds=18"
+      - name: stage test
+        run: echo "stage=test seconds=11"
+      - name: stage package
+        run: echo "stage=package seconds=6"
+      - name: finish
+        run: echo "telemetry complete"
